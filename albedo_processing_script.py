@@ -108,7 +108,7 @@ def get_info(f):
     return cent_lat, cent_lon, date_str, clock_str
 
 
-def Plot():
+def Plot(f, image_date, clock_str, region_tag):
     print(f"Plotting: {file}")
     # Create one figure with three panels
     fig, axes = plt.subplots(1, 3, figsize=(15, 5))
@@ -120,7 +120,7 @@ def Plot():
         ax.set_title(band)
         fig.colorbar(im, ax=ax)
 
-    fig.suptitle(f"{file}\n{image_date} {clock_str} | {region_tag}")
+    fig.suptitle(f"\n{image_date} {clock_str} | {region_tag}")
     fig.tight_layout()
     plt.show()
     plt.close(fig)
